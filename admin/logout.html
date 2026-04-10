@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Logout Confirmation - Sumbar Tech</title>
+    <script src="/admin/auth.js"></script>
+    <script>
+      if (window.AdminAuth && !window.AdminAuth.isLoggedIn()) {
+        window.location.replace("/admin/login");
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#d8e2ff",
+              "surface-container-highest": "#e1e3e4",
+              "on-surface": "#191c1d",
+              outline: "#727785",
+              "on-secondary-fixed-variant": "#005322",
+              "on-error-container": "#93000a",
+              "on-tertiary-container": "#ffffff",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#647a84",
+              "inverse-surface": "#2e3132",
+              "tertiary-fixed": "#cfe6f2",
+              "on-tertiary-fixed": "#071e27",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#007232",
+              "on-secondary-fixed": "#002109",
+              "on-primary-fixed": "#001a41",
+              "surface-bright": "#f8f9fa",
+              "surface-variant": "#e1e3e4",
+              "on-error": "#ffffff",
+              "primary-container": "#1a73e8",
+              "on-background": "#191c1d",
+              "inverse-on-surface": "#f0f1f2",
+              "secondary-fixed": "#66ff8e",
+              "surface-container-high": "#e7e8e9",
+              "outline-variant": "#c1c6d6",
+              "primary-fixed-dim": "#adc7ff",
+              "surface-container-low": "#f3f4f5",
+              "inverse-primary": "#adc7ff",
+              "surface-container": "#edeeef",
+              secondary: "#006d2f",
+              "on-primary-container": "#ffffff",
+              background: "#f8f9fa",
+              tertiary: "#4c616b",
+              "tertiary-fixed-dim": "#b4cad6",
+              "surface-tint": "#005bc0",
+              "on-tertiary": "#ffffff",
+              "surface-dim": "#d9dadb",
+              "secondary-container": "#5dfd8a",
+              "secondary-fixed-dim": "#3de273",
+              "on-primary": "#ffffff",
+              error: "#ba1a1a",
+              primary: "#005bbf",
+              "on-primary-fixed-variant": "#004493",
+              "on-surface-variant": "#414754",
+              surface: "#f8f9fa",
+              "on-tertiary-fixed-variant": "#354a53",
+              "on-secondary": "#ffffff",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+    </style>
+  </head>
+  <body class="overflow-hidden bg-surface font-body text-on-surface antialiased">
+    <div class="fixed inset-0 z-0 bg-on-surface/40">
+      <div class="pointer-events-none grid grid-cols-12 gap-6 p-8 opacity-50 blur-sm">
+        <div class="col-span-2 flex h-screen flex-col gap-4">
+          <div class="h-12 w-full rounded-xl bg-surface-container-highest"></div>
+          <div class="h-8 w-3/4 rounded-lg bg-surface-container-highest"></div>
+          <div class="h-8 w-3/4 rounded-lg bg-surface-container-highest"></div>
+          <div class="h-8 w-3/4 rounded-lg bg-surface-container-highest"></div>
+        </div>
+        <div class="col-span-10 space-y-8">
+          <div class="h-16 w-full rounded-xl bg-surface-container-lowest shadow-sm"></div>
+          <div class="grid grid-cols-3 gap-6">
+            <div class="h-32 rounded-xl bg-surface-container-lowest shadow-sm"></div>
+            <div class="h-32 rounded-xl bg-surface-container-lowest shadow-sm"></div>
+            <div class="h-32 rounded-xl bg-surface-container-lowest shadow-sm"></div>
+          </div>
+          <div class="h-96 w-full rounded-xl bg-surface-container-lowest shadow-sm"></div>
+        </div>
+      </div>
+    </div>
+    <main class="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div class="glass-panel relative w-full max-w-lg overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(0,26,65,0.12)]">
+        <div class="relative h-48 overflow-hidden bg-primary-fixed">
+          <img class="h-full w-full object-cover mix-blend-overlay opacity-80" alt="Logout visual" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8yoUiWAEYfgxlXebgCVJUmtiren-aU_YcZ6gi0KT0jlIoQU0edRvKbpkJAgdcYcZlJVLRoCup-ZNFkMMeDC548cBumqyVXV7AJSeJdPXxDZHZPzkcRPYx5Cky3GEzjkTALcDM8xWcIBC_4l1pwRQ9GKxeRMpPQLR0oPyOOWBpRKyJOzGa1sYWsi86cI4EHRAezybr4zCqm-xkDcCY6Ojt6tPTTO5MK5TOQuWcbnHdVZlmbHDcb0ygjOmnrTtV5jYDa3CahRU2AvE" />
+          <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-1/2 flex h-20 w-20 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-2xl border border-surface-variant bg-surface-container-lowest shadow-xl">
+            <span class="material-symbols-outlined text-4xl text-primary">logout</span>
+          </div>
+        </div>
+        <div class="px-10 pb-10 pt-14 text-center">
+          <div class="mb-2">
+            <span class="font-label text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Confirmation Required</span>
+          </div>
+          <h1 class="mb-3 font-headline text-3xl font-extrabold tracking-tight text-on-surface">Leaving so soon?</h1>
+          <p class="mx-auto mb-8 max-w-[280px] leading-relaxed text-on-surface-variant">
+            You are about to log out of the <span class="font-semibold text-on-surface">Sumbar Tech</span> admin panel. See you soon!
+          </p>
+          <div class="flex flex-col gap-3">
+            <button id="logout-button" class="group relative flex h-14 w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-primary font-semibold text-on-primary transition-all active:scale-[0.98]" type="button">
+              <div class="absolute inset-0 bg-gradient-to-r from-primary-container/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <span class="relative z-10">Log Out</span>
+              <span class="material-symbols-outlined relative z-10 transition-transform group-hover:translate-x-1">arrow_forward</span>
+            </button>
+            <a class="flex h-14 w-full items-center justify-center rounded-xl bg-surface-container-low font-medium text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-on-surface" href="/admin/settings">
+              Cancel
+            </a>
+          </div>
+        </div>
+        <div class="flex items-center justify-center gap-2 border-t border-surface-variant/30 py-4">
+          <div class="h-1.5 w-1.5 rounded-full bg-secondary"></div>
+          <span class="font-headline text-xs font-bold tracking-tight text-on-surface-variant">Precision Admin v2.1</span>
+        </div>
+      </div>
+    </main>
+    <div class="pointer-events-none fixed right-0 top-0 p-12 opacity-20">
+      <svg fill="none" height="400" viewBox="0 0 400 400" width="400" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="200" r="199.5" stroke="url(#paint0_linear)" stroke-dasharray="8 8"></circle>
+        <defs>
+          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear" x1="0" x2="400" y1="0" y2="400">
+            <stop stop-color="#005bbf"></stop>
+            <stop offset="1" stop-color="#005bbf" stop-opacity="0"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <script>
+      document.getElementById("logout-button").addEventListener("click", () => {
+        window.AdminAuth.logout();
+        window.location.replace("/admin/login");
+      });
+    </script>
+  </body>
+</html>

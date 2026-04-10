@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bookings | Precision Admin</title>
+    <script src="/admin/auth.js"></script>
+    <script>
+      window.AdminAuth && window.AdminAuth.requireAuth();
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#005bbf",
+              secondary: "#006d2f",
+              background: "#f8f9fa",
+              surface: "#f8f9fa",
+              "surface-container-low": "#f3f4f5",
+              "surface-container": "#edeeef",
+              "surface-container-high": "#e7e8e9",
+              "surface-variant": "#e1e3e4",
+              "primary-fixed": "#d8e2ff",
+              "primary-fixed-dim": "#adc7ff",
+              "secondary-container": "#5dfd8a",
+              "on-surface": "#191c1d",
+              "on-surface-variant": "#414754",
+              outline: "#727785"
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body class="bg-background font-body text-on-surface">
+    <aside class="fixed left-0 top-0 z-50 flex h-screen w-64 flex-col gap-2 border-r border-transparent bg-gray-50 p-4">
+      <div class="mb-8 flex items-center gap-3 px-2">
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">architecture</span>
+        </div>
+        <div>
+          <h2 class="font-headline text-lg font-black tracking-tighter text-blue-700">Precision Admin</h2>
+          <p class="text-[10px] font-medium uppercase tracking-widest text-gray-500">Terminal v2.1</p>
+        </div>
+      </div>
+      <nav class="flex flex-1 flex-col gap-1">
+        <a class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 font-medium text-blue-700 shadow-sm" href="/admin/bookings"><span class="material-symbols-outlined">assignment</span><span>Bookings</span></a>
+        <a class="flex items-center gap-3 rounded-lg px-4 py-3 text-gray-600 hover:bg-white hover:text-blue-600" href="/admin/services"><span class="material-symbols-outlined">build</span><span>Services</span></a>
+        <a class="flex items-center gap-3 rounded-lg px-4 py-3 text-gray-600 hover:bg-white hover:text-blue-600" href="/admin/customers"><span class="material-symbols-outlined">group</span><span>Customers</span></a>
+        <a class="flex items-center gap-3 rounded-lg px-4 py-3 text-gray-600 hover:bg-white hover:text-blue-600" href="/admin/analytics"><span class="material-symbols-outlined">monitoring</span><span>Analytics</span></a>
+      </nav>
+      <div class="mt-auto flex flex-col gap-1 border-t border-gray-100 pt-4">
+        <a class="flex items-center gap-3 rounded-lg px-4 py-3 text-gray-600 hover:bg-white hover:text-blue-600" href="/admin/settings"><span class="material-symbols-outlined">settings</span><span>Settings</span></a>
+        <a class="flex items-center gap-3 rounded-lg px-4 py-3 text-gray-600 hover:bg-white hover:text-red-600" href="/admin/logout"><span class="material-symbols-outlined">logout</span><span>Logout</span></a>
+      </div>
+    </aside>
+
+    <main class="ml-64 min-h-screen p-8">
+      <div class="mb-8 flex items-start justify-between gap-6">
+        <div>
+          <h1 class="font-headline text-3xl font-extrabold text-blue-700">Bookings Queue</h1>
+          <p class="mt-1 text-sm text-on-surface-variant">Klik salah satu booking untuk melihat detail user, jadwal servis, dan aksi follow-up yang sinkron.</p>
+        </div>
+        <a class="rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-900/10" href="/admin">Back to Dashboard</a>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 xl:grid-cols-5">
+        <section class="rounded-2xl bg-white p-6 shadow-sm xl:col-span-3">
+          <div class="mb-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h2 class="font-headline text-xl font-bold">Incoming Requests</h2>
+              <p class="mt-1 text-sm text-on-surface-variant">Data booking ini tersinkron langsung dari form website publik.</p>
+            </div>
+            <div class="relative w-full md:max-w-sm">
+              <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+              <input id="booking-search" class="w-full rounded-xl border-none bg-surface-container-low py-3 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20" placeholder="Cari nama, WA, model, atau issue..." type="text" />
+            </div>
+          </div>
+          <div id="bookings-list" class="space-y-4"></div>
+        </section>
+
+        <section class="rounded-2xl bg-white p-6 shadow-sm xl:col-span-2">
+          <div id="booking-detail-empty" class="rounded-xl border border-dashed border-surface-variant p-8 text-center text-sm text-on-surface-variant">
+            Pilih booking dari daftar kiri untuk melihat detail customer dan aksi admin.
+          </div>
+
+          <div id="booking-detail" class="hidden space-y-6">
+            <div class="border-b border-surface-container pb-5">
+              <div class="mb-3 flex items-center justify-between gap-3">
+                <h2 id="detail-title" class="font-headline text-xl font-extrabold text-on-surface">Booking Detail</h2>
+                <span id="detail-status" class="rounded-full bg-primary-fixed px-3 py-1 text-xs font-bold text-primary">new request</span>
+              </div>
+              <p id="detail-created" class="text-sm text-on-surface-variant">Dibuat pada -</p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4">
+              <div class="rounded-xl bg-surface-container-low p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Customer</p>
+                <p id="detail-name" class="mt-2 font-semibold text-on-surface">-</p>
+                <p id="detail-wa" class="mt-1 text-sm text-on-surface-variant">-</p>
+              </div>
+              <div class="rounded-xl bg-surface-container-low p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Device</p>
+                <p id="detail-device" class="mt-2 font-semibold text-on-surface">-</p>
+              </div>
+              <div class="rounded-xl bg-surface-container-low p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Issue</p>
+                <p id="detail-issue" class="mt-2 font-semibold text-on-surface">-</p>
+              </div>
+              <div class="rounded-xl bg-surface-container-low p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Schedule</p>
+                <p id="detail-schedule" class="mt-2 font-semibold text-on-surface">-</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <a id="detail-chat-link" class="flex items-center justify-center gap-2 rounded-xl bg-secondary px-4 py-3 text-sm font-bold text-white" href="https://wa.me/6285122605523">
+                <span class="material-symbols-outlined text-base">chat</span>
+                Chat Customer
+              </a>
+              <a id="detail-customer-link" class="flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-bold text-white" href="/admin/customers">
+                <span class="material-symbols-outlined text-base">person</span>
+                Buka Detail User
+              </a>
+            </div>
+
+            <div class="rounded-xl border border-surface-variant p-4">
+              <p class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Admin Note</p>
+              <p class="mt-2 text-sm text-on-surface-variant">
+                Gunakan halaman ini untuk follow-up cepat. Status saat ini masih tampilan sinkron dari database booking, belum ada edit status langsung.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const requestedId = params.get("id");
+
+      const bookingsList = document.getElementById("bookings-list");
+      const bookingSearch = document.getElementById("booking-search");
+      const bookingDetail = document.getElementById("booking-detail");
+      const bookingDetailEmpty = document.getElementById("booking-detail-empty");
+
+      let bookings = [];
+      let filteredBookings = [];
+      let selectedBookingId = requestedId;
+
+      function escapeHtml(value) {
+        return String(value ?? "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;");
+      }
+
+      function formatSchedule(dateValue, timeValue) {
+        if (!dateValue) return "Jadwal belum dipilih";
+        return `${dateValue}${timeValue ? ` • ${String(timeValue).slice(0, 5)}` : ""}`;
+      }
+
+      function formatStatus(status) {
+        return String(status || "new_request").replaceAll("_", " ");
+      }
+
+      function normalizeWa(waNumber) {
+        return String(waNumber || "").replace(/^0/, "62");
+      }
+
+      function renderBookingList() {
+        const keyword = bookingSearch.value.trim().toLowerCase();
+        filteredBookings = bookings.filter((booking) =>
+          [booking.full_name, booking.wa_number, booking.phone_model, booking.issue_description]
+            .join(" ")
+            .toLowerCase()
+            .includes(keyword)
+        );
+
+        if (!filteredBookings.length) {
+          bookingsList.innerHTML =
+            '<div class="rounded-xl border border-dashed border-surface-variant p-6 text-sm text-on-surface-variant">Booking tidak ditemukan.</div>';
+          renderBookingDetail(null);
+          return;
+        }
+
+        if (!filteredBookings.some((booking) => String(booking.id) === String(selectedBookingId))) {
+          selectedBookingId = filteredBookings[0].id;
+          renderBookingDetail(filteredBookings[0]);
+        }
+
+        bookingsList.innerHTML = filteredBookings
+          .map((booking) => {
+            const activeClass =
+              String(booking.id) === String(selectedBookingId)
+                ? "border-primary bg-primary-fixed/40"
+                : "border-surface-variant hover:border-primary/20 hover:bg-surface-container-low";
+
+            return `
+              <button class="booking-item w-full rounded-xl border p-4 text-left transition-all ${activeClass}" data-booking-id="${booking.id}" type="button">
+                <div class="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                  <div class="min-w-0">
+                    <div class="flex items-center gap-3">
+                      <span class="rounded-full bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary shadow-sm">#${booking.id}</span>
+                      <span class="text-xs text-on-surface-variant">${new Date(booking.created_at).toLocaleString("id-ID")}</span>
+                    </div>
+                    <p class="mt-3 font-semibold text-on-surface">${escapeHtml(booking.full_name)}</p>
+                    <p class="mt-1 text-sm text-on-surface-variant">${escapeHtml(booking.phone_model)} • ${escapeHtml(booking.issue_description)}</p>
+                    <p class="mt-2 text-xs text-on-surface-variant">WA ${escapeHtml(booking.wa_number)} • ${escapeHtml(formatSchedule(booking.appointment_date, booking.appointment_time))}</p>
+                  </div>
+                  <span class="rounded-full bg-white px-3 py-1 text-xs font-bold uppercase text-primary shadow-sm">${escapeHtml(formatStatus(booking.status))}</span>
+                </div>
+              </button>
+            `;
+          })
+          .join("");
+
+        document.querySelectorAll(".booking-item").forEach((button) => {
+          button.addEventListener("click", () => {
+            selectBooking(button.dataset.bookingId);
+          });
+        });
+      }
+
+      function renderBookingDetail(booking) {
+        if (!booking) {
+          bookingDetail.classList.add("hidden");
+          bookingDetailEmpty.classList.remove("hidden");
+          return;
+        }
+
+        bookingDetail.classList.remove("hidden");
+        bookingDetailEmpty.classList.add("hidden");
+
+        document.getElementById("detail-title").textContent = `Booking #${booking.id}`;
+        document.getElementById("detail-status").textContent = formatStatus(booking.status);
+        document.getElementById("detail-created").textContent = `Dibuat pada ${new Date(booking.created_at).toLocaleString("id-ID")}`;
+        document.getElementById("detail-name").textContent = booking.full_name;
+        document.getElementById("detail-wa").textContent = booking.wa_number;
+        document.getElementById("detail-device").textContent = booking.phone_model;
+        document.getElementById("detail-issue").textContent = booking.issue_description;
+        document.getElementById("detail-schedule").textContent = formatSchedule(booking.appointment_date, booking.appointment_time);
+
+        const message = encodeURIComponent(`Halo ${booking.full_name}, booking servis untuk ${booking.phone_model} sudah kami terima.`);
+        document.getElementById("detail-chat-link").href = `https://wa.me/${normalizeWa(booking.wa_number)}?text=${message}`;
+        document.getElementById("detail-customer-link").href = `/admin/customers?id=${booking.id}`;
+      }
+
+      function selectBooking(bookingId) {
+        selectedBookingId = bookingId;
+        renderBookingList();
+        const booking = bookings.find((item) => String(item.id) === String(bookingId));
+        renderBookingDetail(booking);
+        window.history.replaceState({}, "", `/admin/bookings?id=${bookingId}`);
+      }
+
+      async function loadBookings() {
+        bookingsList.innerHTML = '<p class="text-sm text-on-surface-variant">Loading bookings...</p>';
+
+        try {
+          const response = await fetch("/api/bookings?limit=100");
+          const data = await response.json();
+
+          if (!response.ok) throw new Error(data.error || "Gagal memuat booking.");
+
+          bookings = data.bookings || [];
+
+          if (!bookings.length) {
+            bookingsList.innerHTML =
+              '<div class="rounded-xl border border-dashed border-surface-variant p-6 text-sm text-on-surface-variant">Belum ada booking masuk dari website.</div>';
+            renderBookingDetail(null);
+            return;
+          }
+
+          const defaultBooking =
+            bookings.find((booking) => String(booking.id) === String(requestedId)) ||
+            bookings[0];
+
+          selectedBookingId = defaultBooking.id;
+          renderBookingList();
+          renderBookingDetail(defaultBooking);
+        } catch (error) {
+          bookingsList.innerHTML = `<p class="text-sm text-red-600">${escapeHtml(error.message)}</p>`;
+          renderBookingDetail(null);
+        }
+      }
+
+      bookingSearch.addEventListener("input", renderBookingList);
+      loadBookings();
+    </script>
+  </body>
+</html>

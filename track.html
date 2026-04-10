@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Book a Repair | Solusi Smartphone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#191c1d",
+              "surface-dim": "#d9dadb",
+              "surface-bright": "#f8f9fa",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#005322",
+              "on-tertiary": "#ffffff",
+              primary: "#005bbf",
+              "primary-container": "#1a73e8",
+              surface: "#f8f9fa",
+              "on-secondary-container": "#007232",
+              "surface-container-low": "#f3f4f5",
+              "primary-fixed": "#d8e2ff",
+              outline: "#727785",
+              secondary: "#006d2f",
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#66ff8e",
+              "tertiary-container": "#647a84",
+              "on-tertiary-container": "#ffffff",
+              "on-surface-variant": "#414754",
+              "surface-container-highest": "#e1e3e4",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f0f1f2",
+              tertiary: "#4c616b",
+              "inverse-primary": "#adc7ff",
+              "tertiary-fixed": "#cfe6f2",
+              "on-secondary-fixed": "#002109",
+              "primary-fixed-dim": "#adc7ff",
+              "on-primary-fixed": "#001a41",
+              "on-error": "#ffffff",
+              "secondary-fixed-dim": "#3de273",
+              error: "#ba1a1a",
+              "on-background": "#191c1d",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#b4cad6",
+              "surface-variant": "#e1e3e4",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#354a53",
+              "on-tertiary-fixed": "#071e27",
+              "surface-tint": "#005bc0",
+              "outline-variant": "#c1c6d6",
+              background: "#f8f9fa",
+              "surface-container": "#edeeef",
+              "inverse-surface": "#2e3132",
+              "secondary-container": "#5dfd8a",
+              "on-primary-container": "#ffffff",
+              "on-primary-fixed-variant": "#004493",
+              "surface-container-high": "#e7e8e9",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-background font-body text-on-background">
+    <header class="fixed top-0 z-50 w-full bg-white/80 shadow-sm backdrop-blur-xl">
+      <div class="mx-auto flex max-w-screen-2xl items-center justify-between px-6 py-4">
+        <div class="flex items-center gap-3">
+          <a href="/" class="text-blue-700" aria-label="Menu">
+            <span class="material-symbols-outlined">menu</span>
+          </a>
+          <a href="/" class="text-xl font-extrabold uppercase tracking-tighter text-blue-700">Solusi Smartphone</a>
+        </div>
+        <div class="hidden items-center gap-8 md:flex">
+          <a class="rounded-lg px-3 py-1 text-sm font-medium uppercase tracking-widest text-gray-600 transition-colors hover:bg-gray-100" href="/">Home</a>
+          <a class="rounded-lg px-3 py-1 text-sm font-medium uppercase tracking-widest text-gray-600 transition-colors hover:bg-gray-100" href="/repairs">Repairs</a>
+          <a class="rounded-lg px-3 py-1 text-sm font-medium uppercase tracking-widest text-blue-700" href="/track">Track</a>
+          <a class="rounded-lg px-3 py-1 text-sm font-medium uppercase tracking-widest text-gray-600 transition-colors hover:bg-gray-100" href="/pricing">Pricing</a>
+        </div>
+        <div class="flex items-center">
+          <a href="https://wa.me/6285122605523" class="text-blue-700" aria-label="Account">
+            <span class="material-symbols-outlined">account_circle</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 pb-32 pt-28 md:px-8">
+      <div class="mb-20 grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
+        <div class="space-y-6 lg:col-span-5">
+          <span class="inline-block text-sm font-semibold uppercase tracking-widest text-primary">Precision Restoration</span>
+          <h1 class="font-headline text-5xl font-extrabold leading-[0.95] tracking-tighter text-on-surface md:text-6xl">
+            Book Your <br />Technical <br /><span class="text-primary">Consultation.</span>
+          </h1>
+          <p class="max-w-md text-lg text-on-surface-variant">
+            Our master technicians restore your lifeline with surgical precision. Secure your priority slot and experience the gold standard in smartphone repair.
+          </p>
+          <div class="mt-12 rounded-xl border border-outline-variant/10 bg-surface-container-low p-6">
+            <div class="mb-4 flex items-center gap-4">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                <span class="material-symbols-outlined text-primary">bolt</span>
+              </div>
+              <h3 class="font-headline text-lg font-bold">Express Processing</h3>
+            </div>
+            <p class="text-sm text-on-surface-variant">Booking online ensures your parts are reserved before you even arrive at the studio.</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <form id="booking-form" class="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div class="space-y-6 rounded-xl bg-surface-container-lowest p-8 shadow-[0_20px_50px_rgba(0,26,65,0.06)] md:col-span-2">
+              <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div class="space-y-2">
+                  <label class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Full Name</label>
+                  <input id="full-name" name="fullName" class="w-full rounded-lg border-none bg-surface-container-highest p-4 text-on-surface focus:ring-2 focus:ring-primary/40" placeholder="e.g. John Doe" type="text" />
+                </div>
+                <div class="space-y-2">
+                  <label class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">WA Number</label>
+                  <input id="wa-number" name="waNumber" class="w-full rounded-lg border-none bg-surface-container-highest p-4 text-on-surface focus:ring-2 focus:ring-primary/40" placeholder="085122605523" type="tel" />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Phone Model &amp; Brand</label>
+                <input id="phone-model" name="phoneModel" class="w-full rounded-lg border-none bg-surface-container-highest p-4 text-on-surface focus:ring-2 focus:ring-primary/40" placeholder="iPhone 15 Pro, Samsung S24 Ultra..." type="text" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Issue Description</label>
+                <textarea id="issue-description" name="issueDescription" class="w-full rounded-lg border-none bg-surface-container-highest p-4 text-on-surface focus:ring-2 focus:ring-primary/40" placeholder="Cracked screen, battery draining, water damage..." rows="3"></textarea>
+              </div>
+            </div>
+
+            <div class="space-y-4 rounded-xl bg-surface-container-lowest p-8 shadow-[0_20px_50px_rgba(0,26,65,0.06)]">
+              <div class="mb-2 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">calendar_month</span>
+                <h3 class="text-sm font-bold uppercase tracking-widest">Appointment</h3>
+              </div>
+              <input id="appointment-date" name="appointmentDate" class="w-full rounded-lg border-none bg-surface-container-highest p-4 focus:ring-2 focus:ring-primary/40" type="date" />
+              <input id="appointment-time" name="appointmentTime" class="w-full rounded-lg border-none bg-surface-container-highest p-4 focus:ring-2 focus:ring-primary/40" type="time" />
+            </div>
+
+            <div class="group flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-outline-variant/30 bg-surface-container-lowest p-8 shadow-[0_20px_50px_rgba(0,26,65,0.06)] transition-colors hover:border-primary/50">
+              <span class="material-symbols-outlined mb-2 text-4xl text-outline-variant group-hover:text-primary">add_a_photo</span>
+              <p class="text-sm font-bold text-on-surface-variant">Upload Device Photos</p>
+              <p class="mt-1 text-[10px] uppercase tracking-wider text-outline">Optional: Helps us diagnose faster</p>
+              <input class="hidden" type="file" />
+            </div>
+
+            <div class="mt-4 md:col-span-2">
+              <button class="flex w-full items-center justify-center gap-3 rounded-xl bg-primary py-6 font-bold text-on-primary shadow-lg shadow-primary/20 transition-transform hover:opacity-90 active:scale-[0.98]" type="submit">
+                <span class="font-headline text-lg">Confirm &amp; Connect to WhatsApp</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+              <p id="booking-feedback" class="mt-3 text-center text-sm text-on-surface-variant"></p>
+              <div class="mt-4 flex items-center justify-center gap-2 text-secondary">
+                <span class="material-symbols-outlined text-sm">verified_user</span>
+                <span class="text-[10px] font-bold uppercase tracking-widest">Priority follow-up via WhatsApp within 15 minutes</span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 items-center gap-12 py-20 md:grid-cols-2">
+        <div class="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl">
+          <img alt="Technical repair workstation" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA-ApW1gEC04Et3padkfo2gfsA0TNsSR3L_bSYr7B1ictmLQSbBnrwfN1BYQBjCtC7urG5M67axfwuwzB5lMone-2aeIoZvBmXebKzot8ik9YnrP-Qo52YDC4wTR-e4RWFqyz6063uaudxZzH_eE3NDWO48x6R6-WK9JziURUNTsj5X1sSsOqs7toR7CMwARAjRsclA4o0w1kZrH_TNA_AfrVNGvhfv7MzRmuV5shtjiZcng9b21ItP5lUG6eYHQ2X9HmzppXKHUc" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+        </div>
+        <div class="space-y-6">
+          <h2 class="font-headline text-3xl font-extrabold tracking-tighter">Why Solusi Precision?</h2>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined mt-1 text-primary">check_circle</span>
+              <div>
+                <p class="font-bold">Original OLED Panels</p>
+                <p class="text-sm text-on-surface-variant">We only use factory-spec displays to maintain color accuracy and touch sensitivity.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined mt-1 text-primary">check_circle</span>
+              <div>
+                <p class="font-bold">90-Day Guarantee</p>
+                <p class="text-sm text-on-surface-variant">Every repair is backed by our signature warranty for total peace of mind.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined mt-1 text-primary">check_circle</span>
+              <div>
+                <p class="font-bold">Priority Slot Booking</p>
+                <p class="text-sm text-on-surface-variant">Online booking helps the team prepare spare parts and shorten your wait time at the store.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="relative w-full bg-gray-50">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-8 py-16 md:grid-cols-3">
+        <div>
+          <span class="text-lg font-black uppercase text-blue-700">Solusi Smartphone</span>
+          <p class="mt-4 text-sm text-gray-600">Precision restoration for the modern digital life. We treat every device as an engineering masterpiece.</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h4 class="font-bold text-on-surface">Navigation</h4>
+          <a class="text-sm text-gray-600 transition-colors hover:text-blue-700" href="/repairs">Services</a>
+          <a class="text-sm text-gray-600 transition-colors hover:text-blue-700" href="/pricing">Pricing</a>
+          <a class="text-sm text-gray-600 transition-colors hover:text-blue-700" href="/">Home</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h4 class="font-bold text-on-surface">Legal</h4>
+          <a class="text-sm text-gray-600 transition-colors hover:text-blue-700" href="/track">Privacy Policy</a>
+          <p class="mt-4 text-xs text-gray-400">© 2026 Solusi Smartphone. Precision Restoration.</p>
+        </div>
+      </div>
+    </footer>
+
+    <nav class="fixed bottom-0 left-0 z-50 flex w-full items-center justify-around rounded-t-2xl border-t border-gray-100 bg-white/80 px-4 pb-4 pt-2 shadow-[0_-10px_40px_rgba(0,26,65,0.06)] backdrop-blur-xl md:hidden">
+      <a class="flex flex-col items-center justify-center px-3 py-1.5 text-gray-500" href="/">
+        <span class="material-symbols-outlined">home</span>
+        <span class="text-[10px] font-semibold uppercase tracking-wider">Home</span>
+      </a>
+      <a class="flex flex-col items-center justify-center px-3 py-1.5 text-gray-500" href="/repairs">
+        <span class="material-symbols-outlined">build</span>
+        <span class="text-[10px] font-semibold uppercase tracking-wider">Repairs</span>
+      </a>
+      <a class="flex flex-col items-center justify-center rounded-xl bg-blue-50 px-3 py-1.5 text-blue-700" href="/track">
+        <span class="material-symbols-outlined">analytics</span>
+        <span class="text-[10px] font-semibold uppercase tracking-wider">Track</span>
+      </a>
+      <a class="flex flex-col items-center justify-center px-3 py-1.5 text-gray-500" href="https://wa.me/6285122605523">
+        <span class="material-symbols-outlined">chat</span>
+        <span class="text-[10px] font-semibold uppercase tracking-wider">WhatsApp</span>
+      </a>
+    </nav>
+    <script>
+      const bookingForm = document.getElementById("booking-form");
+      const feedback = document.getElementById("booking-feedback");
+
+      bookingForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const payload = {
+          fullName: document.getElementById("full-name").value.trim(),
+          waNumber: document.getElementById("wa-number").value.trim(),
+          phoneModel: document.getElementById("phone-model").value.trim(),
+          issueDescription: document.getElementById("issue-description").value.trim(),
+          appointmentDate: document.getElementById("appointment-date").value || null,
+          appointmentTime: document.getElementById("appointment-time").value || null,
+        };
+
+        if (!payload.fullName || !payload.waNumber || !payload.phoneModel || !payload.issueDescription) {
+          feedback.textContent = "Lengkapi data booking terlebih dahulu.";
+          feedback.className = "mt-3 text-center text-sm text-red-600";
+          return;
+        }
+
+        feedback.textContent = "Menyimpan booking...";
+        feedback.className = "mt-3 text-center text-sm text-on-surface-variant";
+
+        try {
+          const response = await fetch("/api/bookings", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          const result = await response.json();
+          if (!response.ok) throw new Error(result.error || "Gagal menyimpan booking.");
+
+          feedback.textContent = "Booking berhasil tersimpan. Mengarahkan ke WhatsApp...";
+          feedback.className = "mt-3 text-center text-sm text-green-700";
+
+          const message = encodeURIComponent(
+            `Halo, saya ${payload.fullName}. Saya sudah kirim booking servis untuk ${payload.phoneModel} dengan keluhan: ${payload.issueDescription}.`
+          );
+
+          setTimeout(() => {
+            window.location.href = `https://wa.me/6285122605523?text=${message}`;
+          }, 700);
+        } catch (error) {
+          feedback.textContent = error.message;
+          feedback.className = "mt-3 text-center text-sm text-red-600";
+        }
+      });
+    </script>
+  </body>
+</html>

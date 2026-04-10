@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Services | Solusi Smartphone</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#191c1d",
+              "surface-dim": "#d9dadb",
+              "surface-bright": "#f8f9fa",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#005322",
+              "on-tertiary": "#ffffff",
+              primary: "#005bbf",
+              "primary-container": "#1a73e8",
+              surface: "#f8f9fa",
+              "on-secondary-container": "#007232",
+              "surface-container-low": "#f3f4f5",
+              "primary-fixed": "#d8e2ff",
+              outline: "#727785",
+              secondary: "#006d2f",
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#66ff8e",
+              "tertiary-container": "#647a84",
+              "on-tertiary-container": "#ffffff",
+              "on-surface-variant": "#414754",
+              "surface-container-highest": "#e1e3e4",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f0f1f2",
+              tertiary: "#4c616b",
+              "inverse-primary": "#adc7ff",
+              "tertiary-fixed": "#cfe6f2",
+              "on-secondary-fixed": "#002109",
+              "primary-fixed-dim": "#adc7ff",
+              "on-primary-fixed": "#001a41",
+              "on-error": "#ffffff",
+              "secondary-fixed-dim": "#3de273",
+              error: "#ba1a1a",
+              "on-background": "#191c1d",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#b4cad6",
+              "surface-variant": "#e1e3e4",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#354a53",
+              "on-tertiary-fixed": "#071e27",
+              "surface-tint": "#005bc0",
+              "outline-variant": "#c1c6d6",
+              background: "#f8f9fa",
+              "surface-container": "#edeeef",
+              "inverse-surface": "#2e3132",
+              "secondary-container": "#5dfd8a",
+              "on-primary-container": "#ffffff",
+              "on-primary-fixed-variant": "#004493",
+              "surface-container-high": "#e7e8e9",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-background font-body text-on-surface selection:bg-primary/20">
+    <header class="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl shadow-sm">
+      <div class="mx-auto flex max-w-screen-2xl items-center justify-between px-6 py-4">
+        <div class="flex items-center gap-4">
+          <a class="rounded-full p-2 transition-colors duration-150 hover:bg-gray-100 active:scale-95" href="/" aria-label="Kembali ke home">
+            <span class="material-symbols-outlined text-blue-700">menu</span>
+          </a>
+          <a class="text-xl font-extrabold tracking-tighter text-blue-700 font-headline" href="/">Solusi Smartphone</a>
+        </div>
+        <nav class="hidden items-center gap-8 md:flex">
+          <a class="text-sm font-bold uppercase tracking-widest text-blue-700 font-label" href="/repairs">Services</a>
+          <a class="rounded-lg px-3 py-1 text-sm uppercase tracking-widest text-gray-600 transition-colors hover:bg-gray-100 font-label" href="/pricing">Pricing</a>
+          <a class="rounded-lg px-3 py-1 text-sm uppercase tracking-widest text-gray-600 transition-colors hover:bg-gray-100 font-label" href="/track">Track</a>
+          <a class="rounded-lg px-3 py-1 text-sm uppercase tracking-widest text-gray-600 transition-colors hover:bg-gray-100 font-label" href="/">Home</a>
+        </nav>
+        <a class="rounded-full p-2 transition-colors duration-150 hover:bg-gray-100 active:scale-95" href="https://wa.me/6285122605523" aria-label="Booking">
+          <span class="material-symbols-outlined text-blue-700">account_circle</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-6 pb-32 pt-28">
+      <section class="mb-20">
+        <div class="max-w-3xl">
+          <span class="mb-4 block text-sm font-semibold uppercase tracking-[0.2em] text-primary font-label">Precision Restoration</span>
+          <h1 class="mb-8 text-5xl font-extrabold leading-[1.1] tracking-tighter font-headline md:text-6xl">
+            Expert Solutions for Your <span class="text-primary-container">Digital Lifeline.</span>
+          </h1>
+          <div class="group relative max-w-2xl">
+            <div class="pointer-events-none absolute inset-y-0 left-5 flex items-center">
+              <span class="material-symbols-outlined text-outline">search</span>
+            </div>
+            <input class="w-full rounded-xl border-none bg-surface-container-highest py-5 pl-14 pr-6 text-on-surface placeholder:text-outline transition-all focus:ring-2 focus:ring-primary/40" placeholder="Search for repairs (e.g., LCD, Flash, Battery)" type="text" />
+            <div class="absolute inset-y-2 right-2 hidden md:block">
+              <a class="flex h-full items-center rounded-lg bg-primary px-6 text-sm font-semibold text-on-primary transition-transform active:scale-95" href="/track">Find Service</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-24">
+        <div class="mb-12 flex items-end justify-between">
+          <div>
+            <span class="mb-2 block text-xs font-bold uppercase tracking-widest text-primary font-label">Category 01</span>
+            <h2 class="text-3xl font-bold tracking-tight font-headline">Hardware Engineering</h2>
+          </div>
+          <div class="mx-8 hidden h-[1px] flex-grow bg-surface-variant md:block"></div>
+        </div>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div class="group rounded-xl bg-surface-container-lowest p-8 transition-all hover:shadow-[0_20px_50px_rgba(0,26,65,0.06)]">
+            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-tertiary-fixed-dim transition-colors group-hover:bg-primary-fixed">
+              <span class="material-symbols-outlined text-3xl text-primary">screenshot</span>
+            </div>
+            <h3 class="mb-3 text-xl font-bold font-headline">Ganti LCD</h3>
+            <p class="mb-8 text-sm leading-relaxed text-on-surface-variant">Restorasi layar dengan komponen original grade. Kejernihan visual dan respons sentuh tanpa kompromi.</p>
+            <a class="flex w-full items-center justify-center gap-2 rounded-lg bg-secondary py-3 font-bold text-on-secondary transition-transform active:scale-95" href="https://wa.me/6285122605523">
+              <span class="material-symbols-outlined text-xl">chat</span>
+              Chat WA
+            </a>
+          </div>
+
+          <div class="group rounded-xl bg-surface-container-lowest p-8 transition-all hover:shadow-[0_20px_50px_rgba(0,26,65,0.06)]">
+            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-tertiary-fixed-dim transition-colors group-hover:bg-primary-fixed">
+              <span class="material-symbols-outlined text-3xl text-primary">battery_charging_full</span>
+            </div>
+            <h3 class="mb-3 text-xl font-bold font-headline">Baterai</h3>
+            <p class="mb-8 text-sm leading-relaxed text-on-surface-variant">Penggantian sel baterai dengan kapasitas presisi. Solusi tuntas untuk masalah drop dan panas berlebih.</p>
+            <a class="flex w-full items-center justify-center gap-2 rounded-lg bg-secondary py-3 font-bold text-on-secondary transition-transform active:scale-95" href="https://wa.me/6285122605523">
+              <span class="material-symbols-outlined text-xl">chat</span>
+              Chat WA
+            </a>
+          </div>
+
+          <div class="group rounded-xl bg-surface-container-lowest p-8 transition-all hover:shadow-[0_20px_50px_rgba(0,26,65,0.06)]">
+            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-tertiary-fixed-dim transition-colors group-hover:bg-primary-fixed">
+              <span class="material-symbols-outlined text-3xl text-primary">usb</span>
+            </div>
+            <h3 class="mb-3 text-xl font-bold font-headline">Port Charger</h3>
+            <p class="mb-8 text-sm leading-relaxed text-on-surface-variant">Perbaikan konektor pengisian daya yang longgar atau tidak terdeteksi. Stabilkan arus daya perangkat Anda.</p>
+            <a class="flex w-full items-center justify-center gap-2 rounded-lg bg-secondary py-3 font-bold text-on-secondary transition-transform active:scale-95" href="https://wa.me/6285122605523">
+              <span class="material-symbols-outlined text-xl">chat</span>
+              Chat WA
+            </a>
+          </div>
+
+          <div class="group rounded-xl bg-surface-container-lowest p-8 transition-all hover:shadow-[0_20px_50px_rgba(0,26,65,0.06)]">
+            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-tertiary-fixed-dim transition-colors group-hover:bg-primary-fixed">
+              <span class="material-symbols-outlined text-3xl text-primary">photo_camera</span>
+            </div>
+            <h3 class="mb-3 text-xl font-bold font-headline">Kamera</h3>
+            <p class="mb-8 text-sm leading-relaxed text-on-surface-variant">Koreksi fokus, pembersihan lensa internal, hingga penggantian modul kamera untuk hasil jepretan sempurna.</p>
+            <a class="flex w-full items-center justify-center gap-2 rounded-lg bg-secondary py-3 font-bold text-on-secondary transition-transform active:scale-95" href="https://wa.me/6285122605523">
+              <span class="material-symbols-outlined text-xl">chat</span>
+              Chat WA
+            </a>
+          </div>
+
+          <div class="group col-span-1 flex flex-col items-start gap-8 rounded-xl bg-surface-container-lowest p-8 transition-all hover:shadow-[0_20px_50px_rgba(0,26,65,0.06)] md:flex-row md:items-center lg:col-span-2">
+            <div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-lg bg-tertiary-fixed-dim transition-colors group-hover:bg-primary-fixed">
+              <span class="material-symbols-outlined text-4xl text-primary">memory</span>
+            </div>
+            <div class="flex-grow">
+              <h3 class="mb-3 text-xl font-bold font-headline">Motherboard Repair</h3>
+              <p class="mb-4 text-sm leading-relaxed text-on-surface-variant">Diagnosis mikro-elektronik untuk kerusakan komponen inti, IC Power, dan short circuit. Penanganan paling teknis dengan peralatan modern.</p>
+              <div class="flex flex-col gap-4 sm:flex-row">
+                <a class="flex items-center justify-center gap-2 rounded-lg bg-secondary px-8 py-3 font-bold text-on-secondary transition-transform active:scale-95" href="https://wa.me/6285122605523">
+                  <span class="material-symbols-outlined text-xl">chat</span>
+                  Chat WA
+                </a>
+                <a class="flex items-center justify-center gap-2 rounded-lg border border-outline-variant px-8 py-3 font-bold text-primary transition-transform active:scale-95" href="/pricing">
+                  <span class="material-symbols-outlined text-xl">payments</span>
+                  Lihat Harga
+                </a>
+              </div>
+            </div>
+            <div class="hidden h-32 w-48 overflow-hidden rounded-lg bg-surface-container-highest md:block">
+              <img class="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0" alt="Close-up motherboard smartphone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsRCHl_iNKiKMKZzruVpQHoojsKhtzv55BNq6QdyN0VIVKlyh8OUv-VS0nKDa0BKRivqwn4A-4P9aYmB2xvdmm2Z0pU7mG4uf8-3_I7tWdi_tRvt7UJ8OnYAdUR20EmT8FJ0c9oydiZpd2aOsm3N7OVcfLVb7sbvGYOKizEiPKYuHhVXOnhp5dX_As5mZyQJjibgkD5IzeM0Xy77U1-GGTtODErdLnL_-Ub1xVkAy-lHbFuSYiTo8mEKSh1weSy9vTUBG-inqpUK4" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <div class="mb-12 flex items-end justify-between">
+          <div>
+            <span class="mb-2 block text-xs font-bold uppercase tracking-widest text-primary font-label">Category 02</span>
+            <h2 class="text-3xl font-bold tracking-tight font-headline">Software Optimization</h2>
+          </div>
+          <div class="mx-8 hidden h-[1px] flex-grow bg-surface-variant md:block"></div>
+        </div>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div class="group rounded-xl bg-surface-container-low p-6 transition-all hover:bg-surface-container-lowest hover:shadow-xl">
+            <span class="material-symbols-outlined mb-4 text-3xl text-primary">developer_mode_tv</span>
+            <h3 class="mb-2 font-bold">Flash Device</h3>
+            <p class="mb-6 text-xs text-on-surface-variant">Instal ulang sistem operasi untuk performa seperti baru.</p>
+            <a class="flex items-center gap-2 text-sm font-bold text-secondary transition-transform group-hover:translate-x-1" href="https://wa.me/6285122605523">Chat WA <span class="material-symbols-outlined text-lg">arrow_forward</span></a>
+          </div>
+          <div class="group rounded-xl bg-surface-container-low p-6 transition-all hover:bg-surface-container-lowest hover:shadow-xl">
+            <span class="material-symbols-outlined mb-4 text-3xl text-primary">lock_open</span>
+            <h3 class="mb-2 font-bold">Unlock</h3>
+            <p class="mb-6 text-xs text-on-surface-variant">Buka kunci jaringan, akun cloud, atau pola yang terlupa.</p>
+            <a class="flex items-center gap-2 text-sm font-bold text-secondary transition-transform group-hover:translate-x-1" href="https://wa.me/6285122605523">Chat WA <span class="material-symbols-outlined text-lg">arrow_forward</span></a>
+          </div>
+          <div class="group rounded-xl bg-surface-container-low p-6 transition-all hover:bg-surface-container-lowest hover:shadow-xl">
+            <span class="material-symbols-outlined mb-4 text-3xl text-primary">restart_alt</span>
+            <h3 class="mb-2 font-bold">Bootloop Fix</h3>
+            <p class="mb-6 text-xs text-on-surface-variant">Solusi perangkat yang terjebak di logo saat booting.</p>
+            <a class="flex items-center gap-2 text-sm font-bold text-secondary transition-transform group-hover:translate-x-1" href="https://wa.me/6285122605523">Chat WA <span class="material-symbols-outlined text-lg">arrow_forward</span></a>
+          </div>
+          <div class="group rounded-xl bg-surface-container-low p-6 transition-all hover:bg-surface-container-lowest hover:shadow-xl">
+            <span class="material-symbols-outlined mb-4 text-3xl text-primary">system_update</span>
+            <h3 class="mb-2 font-bold">Update OS</h3>
+            <p class="mb-6 text-xs text-on-surface-variant">Pembaruan sistem ke versi terbaru paling stabil.</p>
+            <a class="flex items-center gap-2 text-sm font-bold text-secondary transition-transform group-hover:translate-x-1" href="https://wa.me/6285122605523">Chat WA <span class="material-symbols-outlined text-lg">arrow_forward</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="relative w-full bg-gray-50">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-8 py-16 md:grid-cols-3">
+        <div>
+          <span class="mb-4 block text-lg font-black text-blue-700 font-headline">Solusi Smartphone</span>
+          <p class="max-w-xs text-sm text-gray-600 font-body">Pusat perbaikan smartphone profesional dengan standar teknis tinggi dan pelayanan transparan.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <h4 class="mb-4 font-bold font-headline">Quick Links</h4>
+            <ul class="space-y-2">
+              <li><a class="text-sm text-blue-600 underline font-body" href="/repairs">Services</a></li>
+              <li><a class="text-sm text-gray-600 transition-colors hover:text-blue-700 font-body" href="/pricing">Pricing</a></li>
+              <li><a class="text-sm text-gray-600 transition-colors hover:text-blue-700 font-body" href="/">Home</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="mb-4 font-bold font-headline">Support</h4>
+            <ul class="space-y-2">
+              <li><a class="text-sm text-gray-600 transition-colors hover:text-blue-700 font-body" href="/track">Contact</a></li>
+              <li><a class="text-sm text-gray-600 transition-colors hover:text-blue-700 font-body" href="/track">Tracking</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col items-start md:items-end">
+          <p class="mb-2 text-sm text-gray-600 font-body">© 2026 Solusi Smartphone. Precision Restoration.</p>
+          <div class="flex gap-4">
+            <span class="material-symbols-outlined text-blue-700/50">verified</span>
+            <span class="material-symbols-outlined text-blue-700/50">security</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <nav class="fixed bottom-0 left-0 z-50 flex w-full items-center justify-around rounded-t-2xl border-t border-gray-100 bg-white/80 px-4 pb-4 pt-2 shadow-[0_-10px_40px_rgba(0,26,65,0.06)] backdrop-blur-xl md:hidden">
+      <a class="flex flex-col items-center justify-center px-3 py-1.5 text-gray-500 transition-transform duration-200 active:scale-95" href="/">
+        <span class="material-symbols-outlined">home</span>
+        <span class="text-[10px] font-semibold uppercase tracking-wider font-label">Home</span>
+      </a>
+      <a class="flex flex-col items-center justify-center rounded-xl bg-blue-50 px-3 py-1.5 text-blue-700 transition-transform duration-200 active:scale-95" href="/repairs">
+        <span class="material-symbols-outlined">build</span>
+        <span class="text-[10px] font-semibold uppercase tracking-wider font-label">Repairs</span>
+      </a>
+      <a class="flex flex-col items-center justify-center px-3 py-1.5 text-gray-500 transition-transform duration-200 active:scale-95" href="/track">
+        <span class="material-symbols-outlined">analytics</span>
+        <span class="text-[10px] font-semibold uppercase tracking-wider font-label">Track</span>
+      </a>
+      <a class="flex flex-col items-center justify-center px-3 py-1.5 text-gray-500 transition-transform duration-200 active:scale-95" href="https://wa.me/6285122605523">
+        <span class="material-symbols-outlined">chat</span>
+        <span class="text-[10px] font-semibold uppercase tracking-wider font-label">WhatsApp</span>
+      </a>
+    </nav>
+  </body>
+</html>

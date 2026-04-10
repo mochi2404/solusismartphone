@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Solusi Tech | Precision Admin Terminal</title>
+    <script src="/admin/auth.js"></script>
+    <script>
+      window.AdminAuth && window.AdminAuth.requireAuth();
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-on-surface": "#f0f1f2",
+              secondary: "#006d2f",
+              "primary-container": "#1a73e8",
+              "on-tertiary-fixed": "#071e27",
+              "on-tertiary-container": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed-variant": "#004493",
+              "on-background": "#191c1d",
+              error: "#ba1a1a",
+              outline: "#727785",
+              "on-secondary-fixed": "#002109",
+              "surface-variant": "#e1e3e4",
+              primary: "#005bbf",
+              "on-secondary-fixed-variant": "#005322",
+              "on-tertiary-fixed-variant": "#354a53",
+              "surface-container": "#edeeef",
+              "surface-bright": "#f8f9fa",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#cfe6f2",
+              "surface-container-highest": "#e1e3e4",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#66ff8e",
+              "outline-variant": "#c1c6d6",
+              "on-surface": "#191c1d",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#647a84",
+              background: "#f8f9fa",
+              "surface-container-high": "#e7e8e9",
+              "surface-tint": "#005bc0",
+              "tertiary-fixed-dim": "#b4cad6",
+              "surface-container-low": "#f3f4f5",
+              "primary-fixed-dim": "#adc7ff",
+              "on-surface-variant": "#414754",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#ffffff",
+              "surface-dim": "#d9dadb",
+              "on-error-container": "#93000a",
+              "on-primary-fixed": "#001a41",
+              "primary-fixed": "#d8e2ff",
+              "inverse-primary": "#adc7ff",
+              "secondary-container": "#5dfd8a",
+              tertiary: "#4c616b",
+              "on-secondary-container": "#007232",
+              "inverse-surface": "#2e3132",
+              "secondary-fixed-dim": "#3de273",
+              surface: "#f8f9fa",
+              "error-container": "#ffdad6",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+    </style>
+  </head>
+  <body class="bg-background font-body text-on-surface">
+    <aside class="fixed left-0 top-0 z-50 flex h-screen w-64 flex-col gap-2 border-r border-transparent bg-gray-50 p-4">
+      <div class="mb-8 flex items-center gap-3 px-2">
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">architecture</span>
+        </div>
+        <div>
+          <h2 class="font-headline text-lg font-black tracking-tighter text-blue-700">Precision Admin</h2>
+          <p class="text-[10px] font-medium uppercase leading-none tracking-widest text-gray-500">Terminal v2.1</p>
+        </div>
+      </div>
+
+      <nav class="flex flex-1 flex-col gap-1">
+        <a class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 font-medium text-blue-700 shadow-sm transition-all duration-200" href="/admin/bookings">
+          <span class="material-symbols-outlined">assignment</span>
+          <span>Bookings</span>
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-4 py-3 text-gray-600 transition-all duration-200 hover:bg-white hover:text-blue-600" href="/admin/services">
+          <span class="material-symbols-outlined">build</span>
+          <span>Services</span>
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-4 py-3 text-gray-600 transition-all duration-200 hover:bg-white hover:text-blue-600" href="/admin/customers">
+          <span class="material-symbols-outlined">group</span>
+          <span>Customers</span>
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-4 py-3 text-gray-600 transition-all duration-200 hover:bg-white hover:text-blue-600" href="/admin/analytics">
+          <span class="material-symbols-outlined">monitoring</span>
+          <span>Analytics</span>
+        </a>
+      </nav>
+
+      <div class="mt-auto flex flex-col gap-1 border-t border-gray-100 pt-4">
+        <a class="flex items-center gap-3 rounded-lg px-4 py-3 text-gray-600 transition-all duration-200 hover:bg-white hover:text-blue-600" href="/admin/settings">
+          <span class="material-symbols-outlined">settings</span>
+          <span>Settings</span>
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-4 py-3 text-gray-600 transition-all duration-200 hover:bg-white hover:text-red-600" href="/admin/logout">
+          <span class="material-symbols-outlined">logout</span>
+          <span>Logout</span>
+        </a>
+        <a class="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 duration-150 active:scale-95" href="https://wa.me/6285122605523">
+          <span class="material-symbols-outlined text-sm">chat</span>
+          Support Chat
+        </a>
+      </div>
+    </aside>
+
+    <main class="ml-64 min-h-screen">
+      <header class="glass-nav sticky top-0 z-40 flex w-full items-center justify-between px-8 py-4">
+        <div class="flex flex-col">
+          <h1 class="font-headline text-2xl font-extrabold tracking-tight text-blue-700">Dashboard</h1>
+          <p class="text-xs text-on-surface-variant">Welcome back, Admin. System status: Optimal.</p>
+        </div>
+        <div class="flex items-center gap-6">
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3 text-xl text-outline">search</span>
+            <input id="admin-dashboard-search" class="w-64 rounded-full border-none bg-surface-container-low py-2 pl-10 pr-4 text-sm transition-all focus:ring-2 focus:ring-primary/20" placeholder="Cari booking, customer, atau model..." type="text" />
+          </div>
+          <div class="flex items-center gap-3">
+            <button class="rounded-full p-2 text-on-surface-variant transition-colors active:scale-95 hover:bg-gray-50">
+              <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <button class="rounded-full p-2 text-on-surface-variant transition-colors active:scale-95 hover:bg-gray-50">
+              <span class="material-symbols-outlined">settings</span>
+            </button>
+            <div class="mx-1 h-8 w-px bg-gray-100"></div>
+            <a class="rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-primary/10 duration-150 active:scale-95" href="/admin/bookings">New Booking</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="space-y-12 p-8">
+        <section>
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-4">
+            <div class="group rounded-2xl border border-transparent bg-white p-6 shadow-sm transition-all hover:border-primary/10">
+              <div class="mb-4 flex items-start justify-between">
+                <div class="rounded-xl bg-blue-50 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                  <span class="material-symbols-outlined">book_online</span>
+                </div>
+                <span class="rounded-full bg-secondary-container/20 px-2 py-1 text-xs font-bold text-secondary">Live</span>
+              </div>
+              <p class="text-sm font-medium text-on-surface-variant">Total Bookings</p>
+              <h3 id="stat-total-bookings" class="mt-1 font-headline text-3xl font-extrabold text-on-surface">0</h3>
+            </div>
+            <div class="group rounded-2xl border border-transparent bg-white p-6 shadow-sm transition-all hover:border-primary/10">
+              <div class="mb-4 flex items-start justify-between">
+                <div class="rounded-xl bg-blue-50 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                  <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">precision_manufacturing</span>
+                </div>
+                <span class="rounded-full bg-primary-fixed-dim px-2 py-1 text-xs font-bold text-primary">Active</span>
+              </div>
+              <p class="text-sm font-medium text-on-surface-variant">Active Repairs</p>
+              <h3 id="stat-active-repairs" class="mt-1 font-headline text-3xl font-extrabold text-on-surface">0</h3>
+            </div>
+            <div class="group rounded-2xl border border-transparent bg-white p-6 shadow-sm transition-all hover:border-primary/10">
+              <div class="mb-4 flex items-start justify-between">
+                <div class="rounded-xl bg-blue-50 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                  <span class="material-symbols-outlined">task_alt</span>
+                </div>
+                <span class="rounded-full bg-surface-container px-2 py-1 text-xs font-bold text-on-surface-variant">Monthly</span>
+              </div>
+              <p class="text-sm font-medium text-on-surface-variant">Monthly Bookings</p>
+              <h3 id="stat-monthly-bookings" class="mt-1 font-headline text-3xl font-extrabold text-on-surface">0</h3>
+            </div>
+            <div class="group rounded-2xl border border-transparent bg-white p-6 shadow-sm transition-all hover:border-primary/10">
+              <div class="mb-4 flex items-start justify-between">
+                <div class="rounded-xl bg-blue-50 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                  <span class="material-symbols-outlined">payments</span>
+                </div>
+                <span class="rounded-full bg-secondary-container/20 px-2 py-1 text-xs font-bold text-secondary">Done</span>
+              </div>
+              <p class="text-sm font-medium text-on-surface-variant">Completed Repairs</p>
+              <h3 id="stat-completed-repairs" class="mt-1 font-headline text-3xl font-extrabold text-on-surface">0</h3>
+            </div>
+          </div>
+        </section>
+
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <section class="space-y-4 lg:col-span-2">
+            <div class="flex items-center justify-between">
+              <h2 class="font-headline text-xl font-bold text-on-surface">Recent Booking Requests</h2>
+              <a class="text-sm font-semibold text-primary hover:underline" href="/admin/bookings">View All</a>
+            </div>
+            <div class="overflow-hidden rounded-2xl border border-transparent bg-white shadow-sm">
+              <table class="w-full border-collapse text-left">
+                <thead>
+                  <tr class="border-b border-surface-container bg-surface-container-low">
+                    <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant">Customer</th>
+                    <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant">Phone Model</th>
+                    <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant">Issue</th>
+                    <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant">Status</th>
+                    <th class="px-6 py-4 text-right text-xs font-bold uppercase tracking-wider text-on-surface-variant">Date</th>
+                  </tr>
+                </thead>
+                <tbody id="recent-bookings-body" class="divide-y divide-gray-50"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="font-headline text-xl font-bold text-on-surface">Common Repairs</h2>
+            <div class="h-full rounded-2xl border border-transparent bg-white p-6 shadow-sm">
+              <div class="space-y-6">
+                <div>
+                  <div class="mb-2 flex justify-between text-sm font-bold">
+                    <span>Ganti LCD</span>
+                    <span class="text-primary">48%</span>
+                  </div>
+                  <div class="h-3 w-full overflow-hidden rounded-full bg-surface-container">
+                    <div class="h-full w-[48%] rounded-full bg-primary shadow-[0_0_8px_rgba(0,91,191,0.4)]"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="mb-2 flex justify-between text-sm font-bold">
+                    <span>Ganti Baterai</span>
+                    <span class="text-primary">24%</span>
+                  </div>
+                  <div class="h-3 w-full overflow-hidden rounded-full bg-surface-container">
+                    <div class="h-full w-[24%] rounded-full bg-primary/80"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="mb-2 flex justify-between text-sm font-bold">
+                    <span>Water Damage</span>
+                    <span class="text-primary">15%</span>
+                  </div>
+                  <div class="h-3 w-full overflow-hidden rounded-full bg-surface-container">
+                    <div class="h-full w-[15%] rounded-full bg-primary/60"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="mb-2 flex justify-between text-sm font-bold">
+                    <span>Other Soft/Hardware</span>
+                    <span class="text-primary">13%</span>
+                  </div>
+                  <div class="h-3 w-full overflow-hidden rounded-full bg-surface-container">
+                    <div class="h-full w-[13%] rounded-full bg-primary/40"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 flex items-center gap-4 rounded-xl bg-primary-fixed p-4">
+                <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-primary">
+                  <span class="material-symbols-outlined">trending_up</span>
+                </div>
+                <div>
+                  <p class="text-[10px] font-bold uppercase tracking-wider text-primary">Tech Tip</p>
+                  <p class="text-xs leading-snug text-on-primary-fixed-variant">LCD repairs are up 15% this week. Ensure screen stock is replenished.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="font-headline text-xl font-bold text-on-surface">Active Repair Pipeline</h2>
+              <p class="text-sm text-on-surface-variant">Real-time tracking of technician workflow</p>
+            </div>
+            <div class="flex gap-2">
+              <a class="rounded-lg bg-surface-container-high px-4 py-2 text-xs font-bold transition-colors hover:bg-surface-dim" href="/admin/analytics">Filters</a>
+              <a class="rounded-lg bg-surface-container-high px-4 py-2 text-xs font-bold transition-colors hover:bg-surface-dim" href="/admin/analytics">Export Logs</a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div class="rounded-2xl border border-transparent bg-white p-5 shadow-sm transition-all hover:shadow-md">
+              <div class="mb-4 flex items-center justify-between">
+                <span class="rounded bg-blue-50 px-2 py-1 text-[10px] font-bold uppercase tracking-tighter text-primary">ID: #SB-9021</span>
+                <span class="material-symbols-outlined cursor-pointer text-outline hover:text-primary">more_horiz</span>
+              </div>
+              <h4 class="font-headline font-bold text-on-surface">iPhone 13 - Screen Replacement</h4>
+              <p class="mt-1 text-xs text-on-surface-variant">Assigned to: <span class="font-semibold">Technician Budi</span></p>
+              <div class="mt-6 space-y-2">
+                <div class="flex items-end justify-between">
+                  <span class="text-[10px] font-bold uppercase text-on-surface-variant">Diagnostics</span>
+                  <span class="text-xs font-bold text-primary">75%</span>
+                </div>
+                <div class="h-[4px] w-full rounded-full bg-surface-variant">
+                  <div class="h-full w-[75%] rounded-full bg-primary shadow-[0_0_12px_#005bbf]"></div>
+                </div>
+                <div class="flex justify-between text-[10px] font-medium text-outline">
+                  <span>Disassembly</span>
+                  <span>Testing</span>
+                </div>
+              </div>
+              <div class="mt-6 flex items-center justify-between border-t border-gray-50 pt-4">
+                <div class="flex -space-x-2">
+                  <img class="h-6 w-6 rounded-full border-2 border-white object-cover" alt="Technician" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcd9XbAfDimWVQ5_1Ub1VKvfxClzArjtcwDH69TIKSZXEp7z8A8aEmoKylMS-jmUS6gA3biW23xBffqw_nAxYcrFzhfFjgwnRhB61ZbFB22PSQlueodzRtuxNoI42vOlW9Mz0c1dyNvEL0yuAMzavYwE1xbq4iTPTY0FEDgSKCtvyJlxCmhNFGPW18yiBOSlR1SluELKK9CSIZ5huHNs-pOLOaVRpxHsY4Ey2YQpZK925TXTjmQ_bIXriFkoYdPxdhMUhhzfViqb0" />
+                  <div class="flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-primary-fixed text-[8px] font-bold text-primary">+2</div>
+                </div>
+                <a class="flex items-center gap-1 text-xs font-bold text-primary transition-all hover:gap-2" href="/admin/bookings">Update Status <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-transparent bg-white p-5 shadow-sm transition-all hover:shadow-md">
+              <div class="mb-4 flex items-center justify-between">
+                <span class="rounded bg-blue-50 px-2 py-1 text-[10px] font-bold uppercase tracking-tighter text-primary">ID: #SB-9024</span>
+                <span class="material-symbols-outlined cursor-pointer text-outline hover:text-primary">more_horiz</span>
+              </div>
+              <h4 class="font-headline font-bold text-on-surface">Samsung Fold 4 - Hinge Fix</h4>
+              <p class="mt-1 text-xs text-on-surface-variant">Assigned to: <span class="font-semibold">Technician Maya</span></p>
+              <div class="mt-6 space-y-2">
+                <div class="flex items-end justify-between">
+                  <span class="text-[10px] font-bold uppercase text-on-surface-variant">Hardware Repair</span>
+                  <span class="text-xs font-bold text-secondary">30%</span>
+                </div>
+                <div class="h-[4px] w-full rounded-full bg-surface-variant">
+                  <div class="h-full w-[30%] rounded-full bg-secondary shadow-[0_0_12px_#006d2f]"></div>
+                </div>
+                <div class="flex justify-between text-[10px] font-medium text-outline">
+                  <span>Parts Arrival</span>
+                  <span>Reassembly</span>
+                </div>
+              </div>
+              <div class="mt-6 flex items-center justify-between border-t border-gray-50 pt-4">
+                <div class="flex -space-x-2">
+                  <img class="h-6 w-6 rounded-full border-2 border-white object-cover" alt="Technician" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq1b6_V0WHj2w6P0pfV-YBI1fu3sH-MOOGN22mq1p_dgKa1N06tPTF5RQYH46GCuQiuw3sC97qeTHWoifVca24ZvN8XCc8I3cPE56rTdC8ewBOeFGwyXx37Y7s85ZySflC5yfZ0hgGKnoMalNT3RyU9vQE3mTictTspms1zEKLb1W1AxRbbnwNKZnGxjajiPw4A7xm2t4Bfc_j8As1YPi50WvVV2_J2l7MBdaMQG2F-pxihpbS_dWYJqfroQwjGkifGcb3iCyg01o" />
+                </div>
+                <a class="flex items-center gap-1 text-xs font-bold text-primary transition-all hover:gap-2" href="/admin/bookings">Update Status <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+              </div>
+            </div>
+
+            <div class="group flex cursor-pointer flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-gray-200 p-5 text-center transition-all hover:border-primary/40 hover:bg-blue-50/20">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-surface-container text-outline transition-all group-hover:bg-primary/10 group-hover:text-primary">
+                <span class="material-symbols-outlined">add</span>
+              </div>
+              <div>
+                <p class="font-bold text-on-surface">Add New Repair Task</p>
+                <p class="text-[10px] text-on-surface-variant">Queue a new device to technician</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col items-center justify-between gap-8 rounded-3xl bg-surface-container-low p-8 md:flex-row">
+          <div class="max-w-md">
+            <h3 class="font-headline text-2xl font-extrabold text-blue-700">Quick Operations</h3>
+            <p class="mt-2 text-sm text-on-surface-variant">Manage customer transactions and terminal utilities instantly from this panel.</p>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <button class="flex items-center gap-3 rounded-2xl border border-transparent bg-white px-6 py-4 shadow-sm transition-all active:scale-95 hover:shadow-md">
+              <div class="rounded-lg bg-blue-50 p-2 text-primary">
+                <span class="material-symbols-outlined">receipt_long</span>
+              </div>
+              <div class="text-left">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline">Utility</span>
+                <span class="font-bold text-on-surface">Print Receipt</span>
+              </div>
+            </button>
+            <a class="flex items-center gap-3 rounded-2xl border border-transparent bg-white px-6 py-4 shadow-sm transition-all active:scale-95 hover:shadow-md" href="https://wa.me/6285122605523">
+              <div class="rounded-lg bg-green-50 p-2 text-secondary">
+                <span class="material-symbols-outlined">chat</span>
+              </div>
+              <div class="text-left">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline">CRM</span>
+                <span class="font-bold text-on-surface">WhatsApp Update</span>
+              </div>
+            </a>
+            <a class="flex items-center gap-3 rounded-2xl bg-primary px-6 py-4 text-white shadow-lg shadow-primary/20 transition-all active:scale-95" href="/admin/bookings">
+              <div class="rounded-lg bg-white/20 p-2">
+                <span class="material-symbols-outlined">add_circle</span>
+              </div>
+              <div class="text-left">
+                <span class="block text-xs font-bold uppercase tracking-widest text-white/60">Core</span>
+                <span class="font-bold">Add Booking</span>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+      <script>
+        const adminDashboardSearch = document.getElementById("admin-dashboard-search");
+        const recentBookingsBody = document.getElementById("recent-bookings-body");
+
+        function escapeHtml(value) {
+          return String(value)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;");
+        }
+
+        function initials(name) {
+          return name
+            .split(" ")
+            .filter(Boolean)
+            .slice(0, 2)
+            .map((part) => part[0].toUpperCase())
+            .join("");
+        }
+
+        async function loadStats() {
+          try {
+            const response = await fetch("/api/stats");
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.error || "Failed to load stats.");
+
+            document.getElementById("stat-total-bookings").textContent = data.stats.total_bookings ?? 0;
+            document.getElementById("stat-active-repairs").textContent = data.stats.active_repairs ?? 0;
+            document.getElementById("stat-monthly-bookings").textContent = data.stats.monthly_bookings ?? 0;
+            document.getElementById("stat-completed-repairs").textContent = data.stats.completed_repairs ?? 0;
+          } catch (error) {
+            console.error(error);
+          }
+        }
+
+        async function loadRecentBookings() {
+          try {
+            const response = await fetch("/api/bookings?limit=5");
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.error || "Failed to load bookings.");
+
+            if (!data.bookings.length) {
+              recentBookingsBody.innerHTML =
+                '<tr><td colspan="5" class="px-6 py-8 text-center text-sm text-on-surface-variant">Belum ada booking masuk.</td></tr>';
+              return;
+            }
+
+            recentBookingsBody.innerHTML = data.bookings
+              .map(
+                (booking) => `
+                  <tr class="transition-colors hover:bg-gray-50">
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-3">
+                        <div class="flex h-8 w-8 items-center justify-center rounded-full bg-primary-fixed-dim text-xs font-bold text-primary">${escapeHtml(initials(booking.full_name))}</div>
+                        <a class="text-sm font-semibold text-on-surface transition-colors hover:text-primary" href="/admin/customers?id=${booking.id}">${escapeHtml(booking.full_name)}</a>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm"><a class="transition-colors hover:text-primary" href="/admin/bookings?id=${booking.id}">${escapeHtml(booking.phone_model)}</a></td>
+                    <td class="px-6 py-4">
+                      <span class="rounded-md bg-surface-container px-2 py-1 text-[11px] font-bold uppercase text-on-surface-variant">${escapeHtml(booking.issue_description)}</span>
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-1.5 text-primary">
+                        <span class="h-2 w-2 rounded-full bg-primary"></span>
+                        <span class="text-xs font-bold">${escapeHtml(booking.status.replaceAll("_", " "))}</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-right text-xs text-on-surface-variant">${new Date(booking.created_at).toLocaleString("id-ID")}</td>
+                  </tr>
+                `
+              )
+              .join("");
+          } catch (error) {
+            recentBookingsBody.innerHTML = `<tr><td colspan="5" class="px-6 py-8 text-center text-sm text-red-600">${escapeHtml(error.message)}</td></tr>`;
+          }
+        }
+
+        adminDashboardSearch.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter") return;
+
+          const keyword = adminDashboardSearch.value.trim();
+          if (!keyword) return;
+
+          window.location.href = `/admin/customers?search=${encodeURIComponent(keyword)}`;
+        });
+
+        loadStats();
+        loadRecentBookings();
+      </script>
+    </main>
+  </body>
+</html>
